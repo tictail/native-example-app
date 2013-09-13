@@ -37,13 +37,13 @@
   }
 
   function addFeedCard(e) {
-    TT.api.post('v1/stores/' + e.data.store.id + '/cards', JSON.stringify({
+    TT.api.post('v1/stores/' + e.data.store.id + '/cards', {
       title: 'My First Native Feed Card',
       card_type: 'native',
       content: {
         url: 'http://localhost:4000'
       }
-    })).done(feedCardCreated)
+    }).done(feedCardCreated)
       .fail(genericError);
   }
 
