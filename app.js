@@ -1,5 +1,10 @@
 (function() {
   function appStart() {
+    if (/feed=true/.test(window.location.search)) {
+      $('#app').addClass('hidden');
+      $('#feed').removeClass('hidden');
+    }
+
     TT.api.get('v1/me')
       .done(fetchStoreProducts, addClickHandlers)
       .fail(genericError);
@@ -8,6 +13,7 @@
   function addClickHandlers(store) {
     $('.share-button').on('click', share);
     $('.feed-button').on('click', { store: store }, addFeedCard);
+    $('.perform-button').click(function() { TT.native.performCard(); });
   }
 
   function fetchStoreProducts(store) {
@@ -41,7 +47,7 @@
       title: 'My First Native Feed Card',
       card_type: 'native',
       content: {
-        url: 'http://localhost:4000'
+        url: 'http://localhost:4000?feed=true'
       }
     }).done(feedCardCreated)
       .fail(genericError);

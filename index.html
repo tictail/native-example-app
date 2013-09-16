@@ -11,10 +11,15 @@
 <body>
   <div class="app-container">
     <!-- App Content -->
-      <div class="images"></div>
-      <hr>
+    <div class="images"></div>
+    <hr>
+    <div id="app" class="page">
       <button type="button" class="btn btn-primary share-button">Share</button>
       <button type="button" class="btn btn-primary feed-button">Create Feed Card</button>
+    </div>
+    <div id="feed" class="page hidden">
+      <button type="button" class="btn btn-primary perform-button">Perform Card</button>
+    </div>
   </div>
 
   <!-- jQuery (this is required) -->
@@ -22,7 +27,7 @@
   <!-- Tictail UIKit JavaScript -->
   <script src="https://sdk.ttcdn.co/tt-uikit-0.11.0.js"></script>
   <!-- Tictail JavaScript SDK -->
-  <script src="https://sdk.ttcdn.co/tt.0.11.0.js"></script>
+  <script src="https://sdk.ttcdn.co/tt.0.12.0.js"></script>
   <!-- Your Own JavaScript -->
   <script src="app.js"></script>
 </body>
